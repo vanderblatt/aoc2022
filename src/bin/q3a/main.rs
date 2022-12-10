@@ -10,12 +10,12 @@ fn find_duplicate(bs: &[u8]) -> usize {
     let n = bs.len();
     let mut seen: [bool; 53] = [false; 53];
 
-    for &b in &bs[..n/2] {
+    for &b in &bs[..n / 2] {
         let priority = byte_to_priority(b);
         seen[priority] = true;
     }
 
-    for &b in &bs[n/2..] {
+    for &b in &bs[n / 2..] {
         let priority = byte_to_priority(b);
         if seen[priority] {
             return priority;

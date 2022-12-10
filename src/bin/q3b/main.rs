@@ -6,7 +6,10 @@ fn byte_to_priority(b: u8) -> usize {
     }
 }
 
-fn find_common<'a, I>(chunk: I) -> usize where I: Iterator<Item=&'a str> {
+fn find_common<'a, I>(chunk: I) -> usize
+where
+    I: Iterator<Item = &'a str>,
+{
     let mut count: [u8; 53] = [0; 53];
     let mut seen_round: [usize; 53] = [0; 53];
 
